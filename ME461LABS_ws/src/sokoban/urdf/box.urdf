@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<robot name="sokoban" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <link name="base_link" />
+
+    <link name="box">
+        <visual>
+            <geometry>
+                <box size="1.0 1.0 0.05" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="1.0 1.0 0.05" />
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="tracker" type="floating">
+        <parent link="base_link" />
+        <child link="box" />
+    </joint>
+
+</robot>
