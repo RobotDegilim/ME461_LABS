@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<robot name="sokoban" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:include filename="common_prop.xacro"/>
+    <xacro:include filename="box.xacro"/>
+    <xacro:include filename="box_gazebo.xacro"/>
+    <xacro:include filename="camera.xacro"/>
+
+</robot>
