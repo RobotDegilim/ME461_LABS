@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'spawn_service = spawn_service.spawn_service:main',
+            'spawn_targets_service = spawn_service.spawn_targets_service:main'
         ],
     },
 )

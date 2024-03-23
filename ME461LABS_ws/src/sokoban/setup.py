@@ -6,13 +6,12 @@ package_name = 'sokoban'
 def package_files(directory):
     paths = []
     for (path, directories, filenames) in os.walk(directory):
+        relative_path = os.path.relpath(path, directory)
         for filename in filenames:
-            paths.append(os.path.join(path, filename))
+            paths.append((os.path.join('share', package_name, directory, relative_path), [os.path.join(path, filename)]))
     return paths
 
-urdf_files = package_files('urdf')
-launch_files = package_files('launch')
-world_files = package_files('worlds')
+extra_files = package_files('urdf') + package_files('launch') + package_files('worlds') + package_files('models')
 
 setup(
     name=package_name,
@@ -22,14 +21,11 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        ('share/' + package_name + '/urdf', urdf_files),
-        ('share/' + package_name + '/launch', launch_files),
-        ('share/' + package_name + '/worlds', world_files),
-    ],
+    ] + extra_files,
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='usame_aw',
-    maintainer_email='osamasaedawad@gmail.com',
+    maintainer='your_name',
+    maintainer_email='your_email@example.com',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
