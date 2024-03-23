@@ -15,8 +15,12 @@
                 <geometry>
                     <mesh>
                         <uri>model://Donut/meshes/Donut.dae</uri>
+                    <scale>5 5 2</scale>
                     </mesh>
                 </geometry>
+                <material>
+                    <ambient>1 0 0 1</ambient> 
+                </material>
             </visual>
         </link>
     </model>
