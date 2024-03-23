@@ -9,10 +9,17 @@ import random
 class SpawnService(Node):
     def __init__(self):
         super().__init__('spawn_service')
+        self.declare_parameter('object_name', 'box')
+        self.declare_parameter('number_of_boxes', 10)
+        object_name = self.get_parameter('object_name').value
+        number_of_boxes = self.get_parameter('number_of_boxes').value
 
         self.spawn_client = self.create_client(SpawnEntity, 'spawn_entity')
         while not self.spawn_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('service not available, waiting again...')
+        self.get_logger().info('service is available')
+        self.spawn(object_name, number_of_boxes)
+
 
     def spawn(self, name, number):
         pkg_path = os.path.join(get_package_share_directory('sokoban'))
@@ -47,7 +54,6 @@ class SpawnService(Node):
 def main(args=None):
     rclpy.init(args=args)
     spawn_service = SpawnService()
-    spawn_service.spawn('box', 10)
     rclpy.spin(spawn_service)
     spawn_service.destroy_node()
     rclpy.shutdown()
