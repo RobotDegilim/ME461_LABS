@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+    <model name="Kare">
+        <static>true</static>
+        <link name="link">
+            <collision name="Kare_collision">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                <mesh>
+                    <uri>model://Kare/meshes/Kare.dae</uri>
+                </mesh>
+                </geometry>
+            </collision>
+            <visual name="Kare_visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://Kare/meshes/Kare.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+    </model>
+</sdf>
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+    <model name="Donut">
+        <static>true</static>
+        <link name="link">
+            <collision name="donut_collision">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                <mesh>
+                    <uri>model://Donut/meshes/Donut.dae</uri>
+                </mesh>
+                </geometry>
+            </collision>
+            <visual name="donut_visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://Donut/meshes/Donut.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+    </model>
+</sdf>
+
+
+
