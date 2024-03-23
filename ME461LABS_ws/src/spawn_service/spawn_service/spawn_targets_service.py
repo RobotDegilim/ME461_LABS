@@ -13,18 +13,20 @@ class SpawnTargetsService(Node):
         self.declare_parameter('number_of_target', 10)
         self.model_name = self.get_parameter('object_name').value
         self.number_of_target = self.get_parameter('number_of_target').value
-
         self.target_client = self.create_client(SpawnEntity, 'spawn_entity')
         while not self.target_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('service not available, waiting again...')
         self.get_logger().info('service is available')
-        self.spawn_targets(self.model_name, self.number_of_target)
+        self.spawn_targets()
 
     
-    def spawn_targets(self, name , number_of_target):
+    def spawn_targets(self):
         pkg_path = os.path.join(get_package_share_directory('sokoban'))
         model_dir = os.path.join(pkg_path,'models')
-        if name == 'donut':
+        name = self.model_name
+        number_of_target = self.number_of_target
+        self.get_logger().info(f'Spawning {number_of_target} {name} targets')
+        if name == 'Donut':
             model_file = os.path.join(model_dir, 'Donut', 'model.sdf')
         elif name == 'Infinity':
             model_file = os.path.join(model_dir, 'Infinity', 'model.sdf')

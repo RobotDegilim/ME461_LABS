@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <gazebo reference = "box_link">
-        <material>Gazebo/Red</material> 
+        <material>Gazebo/Yellow</material> 
     </gazebo>
 
 </robot>

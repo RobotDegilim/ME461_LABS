@@ -5,6 +5,7 @@ from launch.actions import IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 from launch.substitutions import LaunchConfiguration
+from launch.actions import SetEnvironmentVariable
 
 
 
@@ -12,6 +13,11 @@ def generate_launch_description():
     launch_file_dir = os.path.join(get_package_share_directory('turtlebot3_gazebo'), 'launch')
     pkg_gazebo_ros = get_package_share_directory('gazebo_ros')
     package_name='sokoban' #<--- CHANGE ME
+    models_dir = os.path.join(get_package_share_directory('sokoban'), 'models')
+    # Add the models directory to the Gazebo model path 
+    set_model_path = SetEnvironmentVariable(
+        'GAZEBO_MODEL_PATH', models_dir + os.pathsep + os.environ.get('GAZEBO_MODEL_PATH', '')
+    )
 
     # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
     rsp = IncludeLaunchDescription(
@@ -27,7 +33,7 @@ def generate_launch_description():
     world = os.path.join(
         get_package_share_directory(package_name),
         'worlds',
-        'empty.world'
+        'model1_v1.world'
     )
 
     gzserver_cmd = IncludeLaunchDescription(
@@ -69,6 +75,7 @@ def generate_launch_description():
 
     # Launch them all!
     return LaunchDescription([
+        set_model_path,
         rsp,
         gzserver_cmd,
         gzclient_cmd,
