@@ -3,18 +3,22 @@ import os
 from rclpy.node import Node
 from gazebo_msgs.srv import SpawnEntity
 from ament_index_python.packages import get_package_share_directory
-import xacro
 import random
 
 
 class SpawnTargetsService(Node):
     def __init__(self):
         super().__init__('spawn_targets_service')
+        self.declare_parameter('object_name', 'Donut')
+        self.declare_parameter('number_of_target', 10)
+        self.model_name = self.get_parameter('object_name').value
+        self.number_of_target = self.get_parameter('number_of_target').value
 
         self.target_client = self.create_client(SpawnEntity, 'spawn_entity')
         while not self.target_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('service not available, waiting again...')
         self.get_logger().info('service is available')
+        self.spawn_targets(self.model_name, self.number_of_target)
 
     
     def spawn_targets(self, name , number_of_target):
@@ -61,10 +65,6 @@ class SpawnTargetsService(Node):
 def main(args=None):
     rclpy.init(args=args)
     spawn_targets_service = SpawnTargetsService()
-    spawn_targets_service.spawn_targets('Donut', 10)
-    # spawn_targets_service.spawn_targets('Infinity', 10)
-    # spawn_targets_service.spawn_targets('Kare', 10)
-    # spawn_targets_service.spawn_targets('b3gen', 10)
     rclpy.spin(spawn_targets_service)
     spawn_targets_service.destroy_node()
     rclpy.shutdown()
