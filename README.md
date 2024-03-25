@@ -13,8 +13,8 @@ Step 2: Correctly setup the environment variable for the Turtlebot, add the foll
   
 Step 3: colcon build from root of workspace  
   
-Step 4: Use the following command to launch the simulation: 
-			ros2 launch sokoban gazebo_launch.py    
+Step 4: Use the following command to launch the simulation:    
+:x			ros2 launch sokoban gazebo_launch.py    
 	This will launch the simulation, with a turtlebot3 at the centre of the world, along with a single box.  	  
   
 Step 5: You can now look at the topic being published: ros2 topic list    
