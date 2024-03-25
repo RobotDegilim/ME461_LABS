@@ -37,7 +37,7 @@
 			  
    	ros2 launch spawn_service spawn_target.launch.py    
 	
- This will spawn targets at random locations within the environment. Moreover, you can go to the spawn_target.yaml file to change the target object type and the number of targets you wish to spawn. The yaml file is placed at the same location where spawn.yaml is placed: src/spawn_service/params/spawn.yaml
+ This will spawn targets at random locations within the environment. Moreover, you can go to the spawn_target.yaml file to change the target object type and the number of targets you wish to spawn. The yaml file is placed at the same location where spawn.yaml was placed. Here is the location: src/spawn_service/params/spawn.yaml
 	
 ### Note that currently following target types are available:    
 	Donut  
