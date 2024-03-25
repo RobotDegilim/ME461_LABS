@@ -29,7 +29,7 @@
   
 ### Step 7: If you wish to spawn more boxes in the environment at random locations, you can run the following command:    
   			  
-	ros2 run spawn_service spawn_service --params-file src/spawn_service/params/spawn.yaml    
+	 ros2 launch spawn_service spawn_box.launch.py   
 	
  This will read the spawn.yaml file placed in src/spawn_service/params/spawn.yaml. Infact you can go to this file and change the number of boxes you want to spawn.    
     
