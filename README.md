@@ -33,12 +33,13 @@
 	
  This will read the spawn.yaml file placed in src/spawn_service/params/spawn.yaml. Infact you can go to this file and change the number of boxes you want to spawn.    
     
-### step 8: If you wish to spawn targets and random locations in the environment, you can run the following command:   
+### step 8: If you wish to spawn targets at random locations in the environment, you can run the following command:   
 			  
    	ros2 launch spawn_service spawn_target.launch.py    
 	
  This will spawn targets at random locations within the environment. Moreover, you can go to the spawn_target.yaml file to change the target object and number of targets you wish to spawn.     
 	Note that currently following target types are available:    
+ 
 		* Donut  
 		* Infinity   
 		* Kare  
