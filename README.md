@@ -38,12 +38,12 @@
    	ros2 launch spawn_service spawn_target.launch.py    
 	
  This will spawn targets at random locations within the environment. Moreover, you can go to the spawn_target.yaml file to change the target object and number of targets you wish to spawn.     
-	Note that currently following target types are available:    
- 
-		* Donut  
-		* Infinity   
-		* Kare  
-		* b3gen   
+	
+ Note that currently following target types are available:    
+	Donut  
+	Infinity   
+	Kare  
+	b3gen   
 		
 	  
 
