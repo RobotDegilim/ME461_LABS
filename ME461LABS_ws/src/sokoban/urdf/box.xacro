@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:property name="base_length" value="0.5" />
-    <xacro:property name="base_width" value="0.5" />
-    <xacro:property name="base_height" value="0.5" />
+    <xacro:property name="base_length" value="0.2" />
+    <xacro:property name="base_width" value="0.2" />
+    <xacro:property name="base_height" value="0.2" />
 
     <link name="world"></link>
 
@@ -21,7 +21,7 @@
             </geometry>
             <origin xyz="0 0 ${base_height / 2.0}" rpy="0 0 0" />
         </collision>
-        <xacro:box_inertia m="5.0" l="${base_length}" w="${base_width}" h="${base_height}"
+        <xacro:box_inertia m="0.1" l="${base_length}" w="${base_width}" h="${base_height}"
                            xyz="0 0 ${base_height / 2.0}" rpy="0 0 0" />
     </link>
 
