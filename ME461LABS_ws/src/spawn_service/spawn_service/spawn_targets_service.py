@@ -46,8 +46,8 @@ class SpawnTargetsService(Node):
                 req.xml = file.read()
             req.robot_namespace = name
             req.name = name + str(i)
-            req.initial_pose.position.x = random.uniform(-8, 8)
-            req.initial_pose.position.y = random.uniform(-8, 8)
+            req.initial_pose.position.x = random.uniform(-2, 2)
+            req.initial_pose.position.y = random.uniform(-2, 2)
             req.initial_pose.position.z = 0.0
             req.initial_pose.orientation.x = 0.0
             req.initial_pose.orientation.y = 0.0

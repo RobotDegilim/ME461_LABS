@@ -7,7 +7,7 @@
                 <pose>0 0 0 0 0 0</pose>
                 <geometry>
                     <cylinder>
-                        <radius>0.05</radius>
+                        <radius>0.01</radius>
                         <length>0.01</length>
                     </cylinder>
                 </geometry>
@@ -16,7 +16,7 @@
                 <geometry>
                     <mesh>
                         <uri>model://Donut/meshes/Donut.dae</uri>
-                    <scale>10 10 2</scale>
+                    <scale>5 5 1</scale>
                     </mesh>
                 </geometry>
                     <material>
