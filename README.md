@@ -16,7 +16,7 @@
   
 ### Step 3: colcon build from root of workspace      
 	
-colcon build       
+	colcon build       
     	  
 ### Step 4: Use the following command to launch the simulation:        
 		
