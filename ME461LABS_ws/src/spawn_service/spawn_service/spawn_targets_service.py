@@ -10,7 +10,7 @@ class SpawnTargetsService(Node):
     def __init__(self):
         super().__init__('spawn_targets_service')
         self.declare_parameter('object_name', 'Donut')
-        self.declare_parameter('number_of_target', 10)
+        self.declare_parameter('number_of_target', 1)
         self.model_name = self.get_parameter('object_name').value
         self.number_of_target = self.get_parameter('number_of_target').value
         self.target_client = self.create_client(SpawnEntity, 'spawn_entity')
