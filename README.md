@@ -12,10 +12,12 @@
   
 ### Step 2: Correctly setup the environment variable for the Turtlebot, add the following line to your bashrc:     
 			
-   	export TURTLEBOT3_MODEL=burger      
+   	export TURTLEBOT3_MODEL=waffle       
   
-### Step 3: colcon build from root of workspace    
-    
+### Step 3: colcon build from root of workspace      
+    	  
+    	colcon build       
+    	  
 ### Step 4: Use the following command to launch the simulation:        
 		
   	ros2 launch sokoban gazebo_launch.py      
@@ -29,21 +31,35 @@
   
 ### Step 7: If you wish to spawn more boxes in the environment at random locations, you can run the following command:    
   			  
-	 ros2 launch spawn_service spawn_box.launch.py   
+	 ros2 launch spawn_service spawn_box.launch.py object_name:='box' number_of_boxes:=2  
 	
- This will read the spawn.yaml file placed in src/spawn_service/params/spawn.yaml. Infact you can go to this file and change the number of boxes you want to spawn.    
-    
+ You can modify the number_of_boxes parameter during launch from terminal, however currently we only have 'box' object in this sokoban game, so donot change its value.        
+     
 ### Step 8: If you wish to spawn targets at random locations in the environment, you can run the following command:   
 			  
-   	ros2 launch spawn_service spawn_target.launch.py    
+   	ros2 launch spawn_service spawn_target.launch.py object_name:='Donut' number_of_target:=5            
 	
- This will spawn targets at random locations within the environment. Moreover, you can go to the spawn_target.yaml file to change the target object type and the number of targets you wish to spawn. The yaml file is placed at the same location where spawn.yaml was placed. Here is the location: src/spawn_service/params/spawn.yaml
+ This will spawn targets at random locations within the environment. Moreover, you can modify the object_name to any of the available target type. Similarly, you are free to change number_of_targets parameter to your desired number of targets  
 	
 ### Note that currently following target types are available:    
 	Donut  
 	Infinity   
 	Kare  
 	b3gen   
-		
+### Some Common Errors:  
+Error #1:   
+		[ERROR] [launch]: Caught exception in launch (see debug for traceback): Caught multiple exceptions when trying to load file of format [py]:  
+ 		- KeyError: 'TURTLEBOT3_MODEL'  
+ 		- InvalidFrontendLaunchFileError: The launch file may have a syntax error, or its format is unknown  
+ 		  
+ 	To resolve this, you must set the turtlebot3 model: export TURTLEBOT3_MODEL=waffle
+  
+Error #2: If you get the following error when trying to launch the simulation, 
+		[gzclient-3] gzclient: /usr/include/boost/smart_ptr/shared_ptr.hpp:728: typename boost::detail::sp_member_access<T>::type boost::shared_ptr<T>::operator->() const [with T =   	   
+		             gazebo::rendering::Camera; typename boost::detail::sp_member_access<T>::type = gazebo::rendering::Camera*]: Assertion `px != 0' failed.  
+	  
+	To resolve this, source /usr/share/gazebo/setup.sh
+
+
 	  
 
