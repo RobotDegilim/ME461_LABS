@@ -18,7 +18,7 @@
                         <uri>model://Infinity/meshes/Infinity.dae</uri>
                     <scale>10 10 2</scale>
                     </mesh>
-                </geometry>s
+                </geometry>
                 <material>
                     <ambient>1 0 0 1</ambient> 
                     <diffuse>1 0 0 1</diffuse> 
@@ -28,4 +28,3 @@
         </link>
     </model>
 </sdf>
-

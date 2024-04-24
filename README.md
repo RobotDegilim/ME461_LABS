@@ -31,7 +31,7 @@
   
 ### Step 7: If you wish to spawn more boxes in the environment at random locations, you can run the following command:    
   			  
-	 ros2 launch spawn_service spawn_box.launch.py object_name:='box' number_of_boxes:=2  
+	ros2 launch spawn_service spawn_box.launch.py object_name:='box' number_of_boxes:=2  
 	
  You can modify the number_of_boxes parameter during launch from terminal, however currently we only have 'box' object in this sokoban game, so donot change its value.        
      
@@ -40,29 +40,39 @@
    	ros2 launch spawn_service spawn_target.launch.py object_name:='Donut' number_of_target:=5            
 	
  This will spawn targets at random locations within the environment.You are free to modify the object_name to any of the available target types as mentioned below. Similarly, you are free to change number_of_targets parameter to your desired number of targets  
-	
+
+### Do you want to spawn the targets at specific location? No worries! we got you covered :)
+So, go to spawn_service/params folder and you will find a targets.json file. You can add the name of the object you want to spawn and its location (x,y,z). That's it. Build the workspace again and run the following command: 
+
+	ros2 launch spawn_service spawn.launch.py
+
 ### Note that currently following target types are available:    
 	Donut  
 	Infinity   
 	Kare  
 	b3gen   
-### Some Common Errors:  
-Error #1:   
-		[ERROR] [launch]: Caught exception in launch (see debug for traceback): Caught multiple exceptions when trying to load file of format [py]:  
+### Some Common Errors and how to resolve them:  
+Error #1:
+
+	Caught exception in launch (see debug for traceback): Caught multiple exceptions when trying to load file of format [py]:  
 		-KeyError: 'TURTLEBOT3_MODEL'  
 		-InvalidFrontendLaunchFileError: The launch file may have a syntax error, or its format is unknown  
  		
- 	To resolve this, you must set the turtlebot3 model:
+To resolve this, you must set the turtlebot3 model:
  		
-		export TURTLEBOT3_MODEL=waffle
+	export TURTLEBOT3_MODEL=waffle
+
+Add the above line to your bashrc file, to access the bashrc file: nano ~/.bashrc
   
 Error #2: 
 If you get the following error when trying to launch the simulation, 
-		[gzclient-3] gzclient: /usr/include/boost/smart_ptr/shared_ptr.hpp:728: typename boost::detail::sp_member_access<T>::type boost::shared_ptr<T>::operator->() const [with T =   	   
-		gazebo::rendering::Camera; typename boost::detail::sp_member_access<T>::type = gazebo::rendering::Camera*]: Assertion `px != 0' failed.  
-	  
-	To resolve this, 
-		source /usr/share/gazebo/setup.sh
+
+	[gzclient-3] gzclient: /usr/include/boost/smart_ptr/shared_ptr.hpp:728: typename boost::detail::sp_member_access<T>::type boost::shared_ptr<T>::operator->() const [with T =   	   
+	gazebo::rendering::Camera; typename boost::detail::sp_member_access<T>::type = gazebo::rendering::Camera*]: Assertion `px != 0' failed.  
+	
+To resolve this,
+
+	source /usr/share/gazebo/setup.sh
 
 
 	  

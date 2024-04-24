@@ -13,6 +13,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, 'params'), glob('params/*.yaml')),
+        (os.path.join('share', package_name, 'params'), glob('params/*.json')),
         (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
     ],
     install_requires=['setuptools'],
@@ -25,7 +26,9 @@ setup(
     entry_points={
         'console_scripts': [
             'spawn_service = spawn_service.spawn_service:main',
-            'spawn_targets_service = spawn_service.spawn_targets_service:main'
+            'spawn_targets_service = spawn_service.spawn_targets_service:main',
+            'user_spawn_service = spawn_service.user_spawn_service:main',
+            'spawn_model = spawn_service.spawn:main'
         ],
     },
 )
