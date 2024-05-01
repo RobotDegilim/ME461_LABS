@@ -16,7 +16,7 @@
                 <geometry>
                     <mesh>
                         <uri>model://b3gen/meshes/b3gen.dae</uri>
-                    <scale>10 10 2</scale>
+                    <scale>5 5 1</scale>
                     </mesh>
                 </geometry>
                 <material>
