@@ -1,4 +1,0 @@
-/spawn_service:
-  ros__parameters:
-    object_name: "box"
-    number_of_boxes: 2

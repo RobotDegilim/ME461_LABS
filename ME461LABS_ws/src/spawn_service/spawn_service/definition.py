@@ -1,3 +1,17 @@
+'''
+This file contains the definition of the Target class.
+The Target class is used to define the target objects in the simulation.
+The class has the following attributes:
+    - name: name of the target object
+    - x: x coordinate of the target object
+    - y: y coordinate of the target object
+    - z: z coordinate of the target object
+    - model_file: path to the model file of the target object
+    - pkg_path: path to the package directory
+    - model_dir: path to the models directory
+The class has the following methods:
+    - get_model_file: returns the path to the model file of the target object
+'''
 import os 
 from ament_index_python.packages import get_package_share_directory
 

@@ -15,7 +15,7 @@
             <visual name="b3gen_visual">
                 <geometry>
                     <mesh>
-                        <uri>model://Donut/meshes/b3gen.dae</uri>
+                        <uri>model://b3gen/meshes/b3gen.dae</uri>
                     <scale>10 10 2</scale>
                     </mesh>
                 </geometry>
@@ -28,6 +28,3 @@
         </link>
     </model>
 </sdf>
-
-
-

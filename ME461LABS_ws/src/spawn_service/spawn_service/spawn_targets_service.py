@@ -1,3 +1,7 @@
+'''
+This script is used to spawn targets in the gazebo environment. The targets are spawned randomly in the environment.
+The script reads the sdf file of the target and spawns the targets in random positions in the world.
+'''
 import rclpy
 import os
 from rclpy.node import Node

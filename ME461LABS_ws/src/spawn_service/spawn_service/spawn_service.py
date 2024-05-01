@@ -1,3 +1,7 @@
+'''
+This script is used to spawn boxes in the gazebo world. It uses the SpawnEntity service to spawn the boxes in the world.
+The script reads the xacro file and spawns the boxes in random positions in the world.
+'''
 import rclpy
 import os
 from rclpy.node import Node

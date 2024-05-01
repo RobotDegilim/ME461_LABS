@@ -1,7 +1,11 @@
+'''
+This script is used to spawn targets in the gazebo environment. The targets are spawned at specific positions in the environment.
+THe script read the Json file of the targets and spawns the targets at the specified positions in the world.
+'''
 import rclpy
 from rclpy.node import Node
 from gazebo_msgs.srv import SpawnEntity
-from .defination import Target 
+from .definition import Target 
 from ament_index_python.packages import get_package_share_directory
 import os
 import json

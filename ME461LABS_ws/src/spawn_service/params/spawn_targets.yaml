@@ -1,4 +1,0 @@
-/spawn_targets_service:
-  ros__parameters:
-    object_name: "Donut"
-    number_of_target: 1
