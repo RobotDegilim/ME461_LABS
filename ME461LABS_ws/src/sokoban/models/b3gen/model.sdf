@@ -15,7 +15,7 @@
             <visual name="b3gen_visual">
                 <geometry>
                     <mesh>
-                        <uri>model://b3gen/meshes/b3gen.dae</uri>
+                        <uri>model://b3gen/meshes/Triangle.dae</uri>
                     <scale>5 5 1</scale>
                     </mesh>
                 </geometry>
