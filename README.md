@@ -37,7 +37,7 @@ For the best team work experience, create a Github Organization account and crea
 
 ME461 students are recommended to use the convenience method outlined above. Curious students are encouraged to read the docker file, understand it, and then do everything through the terminal
 
-- To build the docker container navigate to .Dockerfile directory and run ```docker build -t <name> -f ./labs.Dockerfile .``` 
+- To build the docker container navigate to .Dockerfile directory and run ```docker build -t me461_labs -f ./labs.Dockerfile .``` 
 
 - To first create the container ``` docker run fill this part later```
 
