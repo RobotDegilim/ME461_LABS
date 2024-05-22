@@ -5,8 +5,8 @@
         "dockerfile": "labs.Dockerfile",
         "context": "../.."
     },
-    "workspaceFolder": "/home/robot_degilim_labs/mnt/labs_ws",
-    "workspaceMount": "source=${localWorkspaceFolder},target=/home/robot_degilim_labs/mnt,type=bind,consistency=cached",
+    "workspaceFolder": "/home/me461/mnt/labs_ws",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/me461/mnt,type=bind,consistency=cached",
     "containerEnv": {
         "DISPLAY": "${env:DISPLAY}",
         "NVIDIA_VISIBLE_DEVICES": "all",
