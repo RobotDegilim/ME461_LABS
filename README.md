@@ -49,7 +49,7 @@ ME461 students are recommended to use the convenience method outlined above. Cur
     1. empty.world
     2. easymode_v1.world
     3. model1_v1.world
-    4. model2_v2.world
+    4. model2_v1.world
 
 
 ## TO DO LIST 
