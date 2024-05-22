@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+    <model name="Infinity">
+        <static>true</static>
+        <link name="link">
+            <collision name="Infinity_collision">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.05</radius>
+                        <length>0.01</length>
+                    </cylinder>
+                </geometry>
+            </collision>
+            <visual name="Infinity_visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://Infinity/meshes/Infinity.dae</uri>
+                    <scale>10 10 2</scale>
+                    </mesh>
+                </geometry>
+                <material>
+                    <ambient>1 0 0 1</ambient> 
+                    <diffuse>1 0 0 1</diffuse> 
+                    <specular>0.1 0.1 0.1 1</specular> 
+                </material>
+            </visual>
+        </link>
+    </model>
+</sdf>

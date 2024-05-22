@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+    <model name="b3gen">
+        <static>true</static>
+        <link name="link">
+            <collision name="b3gen_collision">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <cylinder>
+                        <radius>0.05</radius>
+                        <length>0.01</length>
+                    </cylinder>
+                </geometry>
+            </collision>
+            <visual name="b3gen_visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://b3gen/meshes/Triangle.dae</uri>
+                    <scale>5 5 1</scale>
+                    </mesh>
+                </geometry>
+                <material>
+                    <ambient>1 0 0 1</ambient> 
+                    <diffuse>1 0 0 1</diffuse> 
+                    <specular>0.1 0.1 0.1 1</specular> 
+                </material>
+            </visual>
+        </link>
+    </model>
+</sdf>

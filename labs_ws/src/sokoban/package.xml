@@ -3,9 +3,21 @@
 <package format="3">
   <name>sokoban</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="osamasaedawad@gmail.com">usame_aw</maintainer>
+  <description>Sokoban in Gazebo</description>
+  <maintainer email="robotdegilim@robots.com">robotdegilim</maintainer>
   <license>TODO: License declaration</license>
+
+  <depend>turtlebot3_gazebo</depend>
+  <depend>gazebo_ros_pkgs</depend>
+  <depend>tf2</depend>
+
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>sensor_msgs</depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
