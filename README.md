@@ -13,7 +13,7 @@ For maximum convenience:
 
 1. Install the _Remote Development_ extension in VSCode.
 
-2. Clone the repo to a directory named robot_degilim_labs on your desktop ```git clone https://github.com/RobotDegilim/ME461_LABS.git ~/Desktop/robot_degilim_labs```
+2. Clone the repo to a directory named robot_degilim_labs on your desktop ```git clone https://github.com/RobotDegilim/ME461_LABS.git ~/Desktop/me461```
 
 3. Open VSCode's command pallete (CTRL + SHIFT + P) and run ```Dev Containers: Rebuild and Reopen in Container```
 
