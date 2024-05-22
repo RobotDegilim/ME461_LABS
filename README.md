@@ -1,6 +1,6 @@
 # ME461_LABS
 
-This repository contains an self-environment for me461 to learn the basics opf ROS2 and Gazebo without having to worry about any installations or dependencies. tt also provides the possibility to expand upon the environment in an easy distributable fashion.
+This repository contains a self-contained environment for me461 students to learn the basics of ROS2 and Gazebo without having to worry about any installations or dependencies. It also provides the possibility to expand upon the environment in an easy distributable fashion.
 
 The repo currently contains the following labs:
 
@@ -17,11 +17,11 @@ For maximum convenience:
 
 3. Open VSCode's command pallete (CTRL + SHIFT + P) and run ```Dev Containers: Rebuild and Reopen in Container```
 
-4. Allow docker to launch GUIs by running ```xhost +local:docker```. This can optionally be added to the .bashrc for extra convience. Ignore any warnings resulting from this command.
+4. Allow docker to launch GUIs by running ```xhost +local:docker```. This can optionally be _added to the .bashrc_ for extra convience. Ignore any warnings resulting from this command.
 
 5. Wait for the building process to finish. The building process might take upwards of 10 mins depending on your internet connection.
 
-6. Check your installation by running and ros2 or gazebo command. A good candidate is ```ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py``` since it requires all major components to be functioning properly (Ros2, Gazebo, and X11 server)
+6. Check your installation by running and ros2 or gazebo command. A good candidate is ```ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py``` since it requires all major components to be functioning properly (ROS2, Gazebo, and X11 server)
 
 7. After building once, run ```Dev Containers: Reopen in Container``` in the command pallete.
 
@@ -31,16 +31,28 @@ For maximum convenience:
 
 ## Recommended Work Flow
 
-For the best team work experience, create a Github Organization account and create your own fork of the repo. This way you will be able to collaborate without having to meet physically. 
+For the best team work experience, create a Github Organization account and create your own fork of the repo. This way you will be able to collaborate in an online fashion and share your work easily with other team members.
 
 ## Building Using DOCKER CLI
 
-ME461 students are recommended to use the convenience method outlined above. Curious students are encouraged to read the docker file, understand it, and then do everything through the terminal
+ME461 students are recommended to use the convenience method outlined above. Curious students are encouraged to read the docker file, understand it, and then do everything through the terminal.
 
-- To build the docker container navigate to .Dockerfile directory and run ```docker build -t me461_labs -f ./labs.Dockerfile .``` 
+- To build the docker container (create an image) navigate to .Dockerfile directory and run ```docker build -t me461_labs -f ./labs.Dockerfile .``` 
 
-- To first create the container ``` docker run fill this part later```
+- To run the docker container (instantiate and image) run the ```<path>/util/build_container_instance.sh``` script.
 
-### TO DO LIST 
+## Launching the Game
+
+- To spawn a turtlebot and a camera in Gazebo run ```ros2 launch sokoban gazebo_launch.py world:="<world_name>.world"```. The camera stream is published on the topic `world_cam/image_raw`
+
+- Note that the world argument defaults to empty.world. The following worlds are available as of currently:
+    1. empty.world
+    2. easymode_v1.world
+    3. model1_v1.world
+    4. model2_v2.world
 
 
+## TO DO LIST 
+1. Add ability to build in diff paths in the script
+2. port second(spawninig scripts) package
+3. 
