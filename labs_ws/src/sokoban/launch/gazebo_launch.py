@@ -40,14 +40,11 @@ def generate_launch_description():
         'GAZEBO_MODEL_PATH', models_dir + os.pathsep + os.environ.get('GAZEBO_MODEL_PATH', '')
     )
 
-
-
     world = PathJoinSubstitution([
                     FindPackageShare(package_name),
                     'worlds',
                     world_sub])
     
-
     gzserver_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_gazebo_ros, 'launch', 'gzserver.launch.py')
