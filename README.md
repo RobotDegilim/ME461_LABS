@@ -51,8 +51,20 @@ ME461 students are recommended to use the convenience method outlined above. Cur
     3. model1_v1.world
     4. model2_v1.world
 
+- To spawn objects in the already launched gazebo server: 
+    1. Change the PARAMs in ```spawn_objects/launch/spawn_params.yaml```. Current PARAMs:
+        - is_random: specifies whether the objects are spawned at random locations 
+        - spawn_box: whether to spawn boxes or not. Setting this to *False* ignores all other box params
+        - num_box: num of boxes to spawn if spawn_box is *True*
+        - spawn_target: whether to spawn targets or not. Setting this to *False* ignores all other targert params
+        - target_type: chooses target to spawn. Possible Targets: 'donut', 'square', 'triangle', 'eight'
+        - num_target:  num of targets to spawn if spawn_target is *True*
+    2. ```ros2 launch spawn_objects spawn_objects.launch.py```
+
 
 ## TO DO LIST 
-1. Add ability to build in diff paths in the script
-2. port second(spawninig scripts) package
+1. fix random spawning in diff worlds
+2. port json spawning 
+3. Add ability to build in diff paths in the script
 3. 
+ 
