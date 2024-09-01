@@ -4,7 +4,7 @@ This repository contains a self-contained environment for me461 students to lear
 
 ## Recommended Work Flow
 
-For the best team work experience, create a Github Organization account and create your own fork of the repo. This way you will be able to collaborate in an online fashion and share your work easily with other team members. You will also be able to push changes into your own forked repo. 
+For the best team work experience, create a Github Organization account and create your own fork of the repo. This way you will be able to collaborate in an online fashion and share your work easily with other team members. You will also be able to push changes to your own forked repo. 
 
 ## Prerequisites
 
@@ -26,13 +26,13 @@ For maximum convenience:
  
 1. Install the _Remote Development_ extension in VSCode.
 
-2. Clone the repo (or forked repo) to a directory named me461 on your desktop ```git clone https://github.com/RobotDegilim/ME461_LABS.git ~/Desktop/me461```. 
+2. Clone the repo (or forked repo) to any desired location. A suitable place might be a directory named me461 on your desktop ```git clone https://github.com/RobotDegilim/ME461_LABS.git ~/Desktop/me461```. 
     
-    The directory structure should look as follows
+    The directory structure should look similar to the following:
 
     ```
     Desktop
-    ├── me461
+    └── me461
         ├── .devcontainer
         ├── labs_ws
         └── util
@@ -40,22 +40,22 @@ For maximum convenience:
 
 3. Open VSCode's command pallete (CTRL + SHIFT + P) and run ```Dev Containers: Rebuild and Reopen in Container```
 
-4. Allow docker to launch GUIs by running ```xhost +local:docker```. This can optionally be _added to the .bashrc_ for extra convience. Ignore any warnings resulting from this command.
+4. Wait for the building process to finish. The building process might take upwards of 10-15 mins depending on your internet connection. 
 
-5. Wait for the building process to finish. The building process might take upwards of 10-15 mins depending on your internet connection.
+5. Check your installation by running any ros2 or gazebo command. A good candidate is ```ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py``` since it requires all major components to be functioning properly (ROS2, Gazebo, and X11 server)
 
-6. Check your installation by running any ros2 or gazebo command. A good candidate is ```ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py``` since it requires all major components to be functioning properly (ROS2, Gazebo, and X11 server)
-
-7. After building once, run ```Dev Containers: Reopen in Container``` in the command pallete to resume working on the labs.
+6. After building once, run ```Dev Containers: Reopen in Container``` in the command pallete to resume working on the labs.
 
 
 ## Building Using DOCKER CLI
 
 ME461 students are recommended to use the convenience method outlined above. Curious students are encouraged to read the docker file, understand it, and then do everything through the terminal.
 
-- To build the docker container (create an image) navigate to .Dockerfile directory and run ```docker build -t me461_labs -f ./labs.Dockerfile .``` 
+- To build the docker container (create an image) navigate to .devcontainer directory and run ```docker build -t me461_labs -f ./labs.Dockerfile .``` 
 
 - To run the docker container (instantiate and image) run the ```<path>/util/build_container_instance.sh``` script.
+
+- To run commands through the docker container interactively use ```docker container exec -it me461_labs bash```
 
 ## Launching the Game
 
@@ -78,7 +78,3 @@ ME461 students are recommended to use the convenience method outlined above. Cur
     2. ```ros2 launch spawn_objects spawn_objects.launch.py```
 
 
-## TO DO LIST 
-1. Port Json Spawning 
-2. Add ability to build in diff paths in the script
- 
