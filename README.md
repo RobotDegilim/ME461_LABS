@@ -57,6 +57,8 @@ ME461 students are recommended to use the convenience method outlined above. Cur
 
 - To run commands through the docker container interactively use ```docker container exec -it me461_labs bash```
 
+> **NOTE**: Don't forget to run ```xhost +local:docker``` in the base machine's terminal inorder to allow Docker to run GUIs.
+
 ## Launching the Game
 
 - To spawn a turtlebot and a camera in Gazebo run ```ros2 launch sokoban gazebo_launch.py world:="<world_name>.world"```. The camera stream is published on the topic `world_cam/image_raw`
