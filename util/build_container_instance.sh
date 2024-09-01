@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Get the directory of the script
+ME461_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && cd .. && pwd )
+echo "Using path: ${ME461_DIR}"
+
 docker stop me461_labs > /dev/null 2>&1 || true
 docker rm me461_labs > /dev/null 2>&1 || true
 
@@ -7,7 +11,7 @@ docker run -d \
     --privileged \
     --net=host \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
-    -v ~/me461:/home/me461/mnt/ \
+    -v ${ME461_DIR}:/home/me461/mnt/ \
     -v /dev:/dev \
     -e DISPLAY=${DISPLAY} \
     -u 1000 \
@@ -18,8 +22,4 @@ docker run -d \
     sleep infinity
 
 #extra convenient stuff
-docker exec me461_labs bash -c "source /opt/ros/humble/setup.bash" 
-docker exec me461_labs bash -c "colcon build --symlink-install"
-docker exec me461_labs bash -c "echo 'source /opt/ros/humble/setup.bash' >> /home/me461/.bashrc"
-docker exec me461_labs bash -c "echo 'source /home/me461/mnt/labs_ws/install/setup.bash' >> /home/me461/.bashrc"
-docker exec me461_labs bash -c "echo 'export PATH=\$PATH:/home/me461/mnt/util/' >> /home/me461/.bashrc"
+docker exec me461_labs /bin/bash ../util/init_env.sh
