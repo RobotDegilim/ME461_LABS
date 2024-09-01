@@ -33,8 +33,6 @@ RUN apt install ros-humble-cv-bridge -y \
     ros-humble-robot-state-publisher* -y \
     && rm -rf /var/lib/apt/lists/*
 
-ENV PYTHONPATH=$PYTHONPATH:/usr/local/lib
-
 # Add user
 RUN groupadd --gid $USER_GID $USERNAME \
     && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \

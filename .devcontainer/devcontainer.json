@@ -5,6 +5,7 @@
         "dockerfile": "labs.Dockerfile",
         "context": "../.."
     },
+    "initializeCommand": "xhost +",
     "workspaceFolder": "/home/me461/mnt/labs_ws",
     "workspaceMount": "source=${localWorkspaceFolder},target=/home/me461/mnt,type=bind,consistency=cached",
     "containerEnv": {
