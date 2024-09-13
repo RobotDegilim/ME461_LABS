@@ -69,14 +69,14 @@ ME461 students are recommended to use the convenience method outlined above. Cur
     3. model1_v1.world
     4. model2_v1.world
 
-- To spawn objects in the already launched gazebo server: 
-    1. Change the PARAMs in ```spawn_objects/launch/spawn_params.yaml```. Current PARAMs:
-        - is_random: specifies whether the objects are spawned at random locations 
+- To spawn objects in the already launched gazebo server run the command: ```ros2 launch spawn_objects spawn_objects.launch.py spawn_from_json:=true/false```. As of currently two different options exist:
+   
+    1. **Random Spawning:** Change the PARAMs in ```spawn_objects/launch/spawn_params.yaml```. Current PARAMs:
         - spawn_box: whether to spawn boxes or not. Setting this to *False* ignores all other box params
         - num_box: num of boxes to spawn if spawn_box is *True*
         - spawn_target: whether to spawn targets or not. Setting this to *False* ignores all other targert params
         - target_type: chooses target to spawn. Possible Targets: 'donut', 'square', 'triangle', 'eight'
         - num_target:  num of targets to spawn if spawn_target is *True*
-    2. ```ros2 launch spawn_objects spawn_objects.launch.py```
-
-
+        - x_rand: max possible x coordinate (in meters) used for random location generation
+        - y_rand: max possible y coordinate (in meters) used for random location generation
+    2. **Spawning at Predetermined Coordinates:** Change the Objects and Coordinates in  ```spawn_objects/launch/objects.json```
