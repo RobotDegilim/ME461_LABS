@@ -1,9 +1,9 @@
 object_spawner:
   ros__parameters:
-    is_random: True
     spawn_box: True
-    num_box: 4
+    num_box: 5
     spawn_target: True
-    target_type: "triangle"
-    num_target: 3
-       
+    target_type: "eight"
+    num_target: 5
+    x_rand: 4
+    y_rand: 4
